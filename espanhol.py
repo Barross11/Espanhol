@@ -6,15 +6,16 @@ def main():
         posicao = verbo.find("r")+1
         if posicao <= 0:
             print(">> Você precisa colocar um verbo no infinitivo")
+            continue
         elif posicao == tamanho_verbo:
             irregulares = ['tener', 'venir', 'caber']
-            if verbo in irregulares and verbo[-2]+verbo[-1] == 'ar':
+            if verbo in irregulares and verbo[-2:] == 'ar':
                 verbo = verbo.replace('ar', 'dr')
-            elif verbo in irregulares and verbo[-2]+verbo[-1] == 'er':
+            elif verbo in irregulares and verbo[-2:] == 'er':
                verbo = verbo.replace('er', 'dr')
-            elif verbo in irregulares and verbo[-2]+verbo[-1] == 'ir':
+            elif verbo in irregulares and verbo[-2:] == 'ir':
                  verbo = verbo.replace('ir', 'dr')
-            opções = ["yo","tu","él","ella","usted","nosotros","nosotras","vosotros","ellas","ellos","ustedes"]
+            opções = ["yo", "tu", "él", "ella", "usted", "nosotros", "nosotras", "vosotros", "ellas", "ellos", "ustedes"]
             print(f"Essas sãs as suas opções de sujeitos ------ {opções}")
             if posicao > 0 and posicao == tamanho_verbo:
                 sujeito = input("Me diga o sujeito> ").lower()
